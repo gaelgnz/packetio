@@ -1,10 +1,10 @@
 [package]
 name = "packetio"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2024"
 authors = ["Gael <gaelgnz23@hotmail.com>"]
 readme = "README.md"
 license = "BSD-3-Clause"
-description = "A simple Rust crate for sending and receiving length-prefixed binary packets over any stream that implements `Read + Write`. Uses [`bincode`](https://crates.io/crates/bincode) for serialization. It lets you send structs and rust types over the network!"
+description = "A simple Rust crate for sending and receiving length-prefixed binary packets over any stream."
 [dependencies]
 bincode = "2.0.1"
