@@ -1,4 +1,5 @@
 # packetio
+![Crates.io Size](https://img.shields.io/crates/size/packetio)
 
 A simple Rust crate for sending and receiving length-prefixed binary packets over any stream
 that implements `Read + Write`. Uses [`bincode`](https://crates.io/crates/bincode) for serialization.
