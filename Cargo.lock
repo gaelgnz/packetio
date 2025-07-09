@@ -40,7 +40,7 @@ dependencies = [
 
 [[package]]
 name = "packetio"
-version = "0.1.32"
+version = "0.1.33"
 dependencies = [
  "bincode",
  "os_pipe",
