@@ -10,9 +10,10 @@ It lets you send structs and rust types over the network!
 ## Features
 
 - Sends and receives length-prefixed packets to keep boundaries clear
-- Generic over any stream implementing `Read + Write` (`TcpStream`, `BufReader`, etc.)
-- Minimal API with a handy `PacketIO` trait for easy use
+- Generic over any stream implementing `Read` or `Write`)(`TcpStream`, `BufReader`, etc.)
+- Minimal API with a handy `PacketSender` and `PacketReceiver` traits for easy use
 - Uses `bincode` for compact, efficient binary encoding
+- Lightweight and just straight forward!
 
 ---
 

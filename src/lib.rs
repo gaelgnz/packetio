@@ -6,12 +6,17 @@
 //! ## Example
 //!
 //! ```no_run
-//! use std::net::TcpStream;
-//! use packetio::PacketIO;
-//!
-//! let mut stream = TcpStream::connect("127.0.0.1:9000").unwrap();
-//! stream.send_packet(MyPacket { ... }).unwrap(); // Mypacket or basically any other struct or rust type as long as it implements Encode and Decode traits (bincode)
-//! let response: MyResponse = stream.recv_packet().unwrap();
+//! writer.send_packet(&test_struct).unwrap();
+
+//! let mut size_buf = [0u8; 4];
+//! reader.read_exact(&mut size_buf).unwrap();
+//! let size = parsing::parse_length(size_buf);
+
+//! let mut packet = vec![0u8; size];
+//! reader.read_exact(&mut packet).unwrap();
+
+//! let result: TestStruct = parsing::parse_packet(packet).unwrap(); // There you go!
+
 //! ```
 //!
 
