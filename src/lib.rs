@@ -63,7 +63,7 @@ pub fn recv_packet<T: Decode<()>, R: Read>(reader: &mut R) -> Result<T, Box<dyn 
 
 /// NOTE! Packets send first its length, then the packet itself. So make sure you aren't parsing the length and the actual packet in bytes.
 /// Example:
-/// ```
+/// ```no_run
 /// let stream = TcpStream::connect("127.0.0.1:8080")?;
 ///
 /// let mut size_buf = [0u8; 4];
@@ -82,10 +82,12 @@ pub fn recv_packet<T: Decode<()>, R: Read>(reader: &mut R) -> Result<T, Box<dyn 
 mod parsing {
     use super::*;
 
+    #[allow(dead_code)]
     pub fn parse_packet<T: Decode<()>>(packet: Vec<u8>) -> Result<T, Box<dyn Error>> {
         let (decoded, _) = bincode::decode_from_slice(&packet, bincode::config::standard())?;
         Ok(decoded)
     }
+    #[allow(dead_code)]
     pub fn parse_length(length: [u8; 4]) -> usize {
         let size = u32::from_be_bytes(length) as usize;
         size
@@ -99,7 +101,7 @@ mod tests {
     use os_pipe::pipe;
     #[test]
     fn test_manual_parse_packet() {
-        use crate::{PacketReceiver, PacketSender, parsing};
+        use crate::{PacketSender, parsing};
 
         let (mut reader, mut writer) = pipe().unwrap();
 
