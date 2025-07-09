@@ -84,7 +84,7 @@ pub fn recv_packet<T: Decode<()>, R: Read>(reader: &mut R) -> Result<T, Box<dyn 
 /// ```
 ///
 /// This module provides more control over the parsing process. Which might be useful if you don't want recv_packet() and parse_packet() doing exactly what they do.
-mod parsing {
+pub mod parsing {
     use super::*;
 
     #[allow(dead_code)]

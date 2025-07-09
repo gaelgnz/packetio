@@ -1,6 +1,6 @@
 [package]
 name = "packetio"
-version = "0.1.33"
+version = "0.1.4"
 edition = "2024"
 authors = ["Gael <gaelgnz23@hotmail.com>"]
 readme = "README.md"
