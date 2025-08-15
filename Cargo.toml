@@ -1,6 +1,6 @@
 [package]
 name = "packetio"
-version = "0.1.5"
+version = "0.2.0"
 edition = "2024"
 authors = ["Gael <gaelgnz23@hotmail.com>"]
 readme = "README.md"
@@ -8,7 +8,9 @@ license = "BSD-3-Clause"
 description = "A simple Rust crate for sending and receiving length-prefixed binary packets over any stream."
 documentation = "https://docs.rs/packetio"
 [dependencies]
+async-trait = "0.1.89"
 bincode = "2.0.1"
 os_pipe = "1.2.2"
+tokio = { version = "1.47.1", features = ["full"] }
 [lib]
 doctest = false
